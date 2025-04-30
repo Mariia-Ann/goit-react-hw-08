@@ -17,6 +17,16 @@
   transition: border-color 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 767.98px) {
+  .text {
+    font-size: 17px;
+  }
+
+  .input {
+    width: 250px;
+  }
+}
+
 .input:hover,
 .input:focus,
 .input:active {

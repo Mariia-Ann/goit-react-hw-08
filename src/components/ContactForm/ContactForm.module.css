@@ -9,6 +9,13 @@
   margin: 20px auto;
   background-color: #fff;
 }
+
+@media screen and (max-width: 767.98px) {
+  .form {
+    width: 250px;
+  }
+}
+
 .label {
   display: flex;
   flex-direction: column;
@@ -37,11 +44,11 @@
   margin: 0 auto;
   border-radius: 10px;
   border: none;
-  background-color: #7d3f79;
+  background-color: #6b3f7d;
   color: #f7f3f9;
   transition: background-color 0.3s ease-in-out;
 }
 
 .btnForm:hover {
-  background-color: #6b3f7d;
+  background-color: #7d3f79;
 }

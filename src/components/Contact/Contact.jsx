@@ -1,17 +1,18 @@
 import { IoPersonSharp } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
 import style from "./Contact.module.css";
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
+import { useToggle } from "../../hooks/useToggle";
+import ContactEditModal from "../ContactEditModal/ContactEditModal";
+import { FaUserEdit } from "react-icons/fa";
+import ApproveModal from "../ApproveModal/ApproveModal";
 
 const Contact = ({ contact }) => {
-  const dispatch = useDispatch();
-  const handleDelete = () => {
-    dispatch(deleteContact(contact.id));
-  };
+  const { isOpen: isEditOpen, open: openEdit, close: closeEdit } = useToggle();
+  const { isOpen: isApproveOpen, open: openApprove, close: closeApprove } = useToggle();
+
   return (
-    <>
-      <div className={style.contact}>
+    <div className={style.contact}>
+      <div className={style.data}>
         <p className={style.text}>
           <IoPersonSharp className={style.icon} />
           {contact.name}
@@ -21,10 +22,21 @@ const Contact = ({ contact }) => {
           {contact.number}
         </p>
       </div>
-      <button className={style.btnDelete} onClick={handleDelete}>
-        Delete
-      </button>
-    </>
+      <div className={style.btns}>
+        <button className={style.btnEdit} onClick={openEdit}>
+          <FaUserEdit size="20px" />
+        </button>
+        <button className={style.btnDelete} onClick={openApprove}>
+          Delete
+        </button>
+      </div>
+      {isEditOpen && (
+        <ContactEditModal isOpen={isEditOpen} onClose={closeEdit} contact={contact} />
+      )}
+      {isApproveOpen && (
+        <ApproveModal isOpen={isApproveOpen} onClose={closeApprove} contact={contact} />
+      )}
+    </div>
   );
 };
 

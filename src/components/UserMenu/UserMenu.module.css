@@ -1,0 +1,37 @@
+.userMenu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.link {
+  color: #f7f3f9;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #f7f3f9;
+    color: #683f7d;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #e8b0e0;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .link {
+      font-size: 15px;
+    }
+    .btn {
+      font-size: 14px;
+      width: 100px;
+      padding: 10px;
+    }
+  }
