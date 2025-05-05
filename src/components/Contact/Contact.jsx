@@ -5,6 +5,7 @@ import { useToggle } from "../../hooks/useToggle";
 import ContactEditModal from "../ContactEditModal/ContactEditModal";
 import { FaUserEdit } from "react-icons/fa";
 import ApproveModal from "../ApproveModal/ApproveModal";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Contact = ({ contact }) => {
   const { isOpen: isEditOpen, open: openEdit, close: closeEdit } = useToggle();
@@ -27,7 +28,7 @@ const Contact = ({ contact }) => {
           <FaUserEdit size="20px" />
         </button>
         <button className={style.btnDelete} onClick={openApprove}>
-          Delete
+        <RiDeleteBin6Line size="20px" />
         </button>
       </div>
       {isEditOpen && (

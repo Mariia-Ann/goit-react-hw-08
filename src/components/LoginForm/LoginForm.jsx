@@ -3,7 +3,7 @@ import style from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { useId } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const initialValues = {
   email: "",
